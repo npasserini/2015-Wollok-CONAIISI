@@ -136,8 +136,45 @@ Universidad Nacional de Quilmes\\
 }
 
 \frame{
-	\frametitle{Introducción}
-	\framesubtitle{¿Por qué es difícil aprender OOP?}	
+	\frametitle{Contexto}
+	\begin{itemize}
+	    \item Nos interesa la enseñanza de \textbf{programación con objetos}
+	    \medskip
+	    \item Principalmente en tecnicaturas e ingenierías
+	    \begin{itemize}
+    		\item es decir: futuros desarrolladores de software
+	    \end{itemize}
+	    \medskip
+	    \item Fundamentalmente universitarios
+	    \begin{itemize}
+	    	\item Pero también estamos trabajando con secundarios
+	    \end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Problema}
+	\begin{itemize}
+		\item Bajos niveles de aprobación
+		\pause
+		\item Suelen propagarse malas prácticas de programació
+		\item Dificultades en la comprensión de los conceptos básicos
+		\item Baja calidad del código producido
+	\end{itemize}
+	\pause
+	\bigskip
+	¿Por qué pasa eso?
+	\begin{itemize}
+		\item Capacidad de abstracción insuficiente
+		\item Base matemática débil
+	\end{itemize}
+	\pause
+	\bigskip
+	Es nuestra responsabilidad cubrir esas falencias.
+}
+
+\frame{
+	\frametitle{¿Por qué es difícil aprender OOP?}	
 	\begin{itemize}
     \item Enfoque en un lenguaje particular
     \item Demasiados conceptos
@@ -200,13 +237,13 @@ Universidad Nacional de Quilmes\\
 	\begin{itemize}
 		\item Sintaxis cuidada 
 			\begin{itemize}
-			  \item selección de keywords
-			  \item return obligatorio
-			  \item énfasis en objetos y mensajes {\footnotesize (aunque no todo es objeto mensaje)}
+			  \item selección de keywords (ej: \code{const}, \code{method})
+			  \item \code{return} obligatorio
+			  \item énfasis en objetos y mensajes \footnote {¡Aunque no todo es objeto-mensaje!}
 			\end{itemize}
-		\item Combina object-based con class-based programming
+		\item Combina \textit{object-based} con \textit{class-based programming}
 		\item APIs minimalistas (ej: colecciones)
-		\item Import system
+		\item \textit{Import system}
 	\end{itemize}
 }
 
@@ -219,117 +256,9 @@ Universidad Nacional de Quilmes\\
 		\item Sintaxis concisa y "moderna"\\
 		{\footnotesize Ej: lambdas, literales para colecciones, excepciones, constructores}
 		\item Sistema de tipos \emph{pluggeable} (en proceso)
-		\item Mixins (planificado)
+		\item Mixins
 	\end{itemize}
 }
-
-\section{Desarrollo de Wollok}
-\frame{
-	\frametitle{Desarrollo de Wollok}	
-	\begin{itemize}
-		\item OpenSource: LGPLv3 
-		\item Stack: \includegraphics[width=9pt,
-			 	height=9pt,natwidth=32,natheight=32]{images/eclipse-icon.png} Eclipse XText +
-			 	Xtend Lang
-		\item SCM:
-			\begin{itemize}
-			  	\item \textbf{Código}: \includegraphics[width=9pt,
-			 	height=9pt,natwidth=16pt,natheight=16pt]{images/github-icon.png} GitHub
-			  	(\href{https://github.com/uqbar-project/wollok}{uqbar-project/wollok})
-			 	\item \textbf{Build}: Maven + Tycho
-			 	\item \textbf{Continuous Integration}:
-			 	\includegraphics[width=9pt,
-			 	height=9pt,natwidth=50pt,natheight=50pt]{images/travis-ci-icon.png} Travis
-			 	\item \textbf{Continuous Deployment}
-			 	\item \textbf{Coverage}: coveralls + jacoco
-			 \end{itemize}
-		\item Testing \& TDD
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Desarrollo de Wollok}
-	\framesubtitle{Continuous Integration \& Deployment}	
-	\begin{itemize}
-	  	\item \textbf{GitFlow}
-	  		\begin{itemize}
-	  		  \item Feature Branches
-	  		  \item Pull-Requests
-	  		  \item $dev \rightarrow master \leftarrow  hotfixes$ 
-			\end{itemize}	 
-		\item \textbf{Integration}:
-			\begin{itemize}
-			  \item Travis
-			  \item compile, test, coverage, deploy
-			\end{itemize}
-		\item Deployment:
-				\begin{itemize}
-				  \item \textbf{Productos} (IDE): multiples pataformas
-				  \item \textbf{Update Sites}
-				  \item \textbf{WDK}
-				  \item 2 Ambientes: Stable \& Dev
-				\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Desarrollo de Wollok}
-	\framesubtitle{Testing \& TDD}	
-	\begin{itemize}
-	  	\item 87\% Cobertura 	
-	  	\item \textbf{Runtime}      % SCREEN: ACA MOSTRAMOS UN SCREENSHOT DE UN TEST
-	  		\begin{itemize}
-	  		  \item Testean ejecución
-	  		  \item Interprete
-	  		  \item \textbf{JUnit + iDSL}
-			\end{itemize}	 
-		\item \textbf{Estáticos}
-			\begin{itemize}
-			  \item \textbf{Chequeos}: XPect  % SCREEN: ACA MOSTRAMOS UN TEXT XPECT
-			  \item \textbf{Type System}: JUnit + iDSL
-			  \item \textbf{Autocomplete}: XPect
-			  \item \textbf{Formateo}: JUnit + iDSL
-			\end{itemize}
-		\item \textbf{Pendientes}
-			\begin{itemize}
-			  \item Quick-Fixes
-			  \item Refactors
-			\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Testing \& TDD}
-	\framesubtitle{Runtime}
-	Testeo del Intérprete
-	\begin{center}
-		\begin{figure}
-			\includegraphics[width=1\textwidth,natwidth=836,natheight=444]{images/wollok-tests-runtime.eps}
-		\end{figure}
-	\end{center}
-}
-
-\frame{
-	\frametitle{Testing \& TDD}
-	\framesubtitle{Chequeos Estáticos}
-	Testeo de Chequeos Estáticos
-	\begin{center}
-		\begin{figure}
-			\includegraphics[width=1\textwidth,natwidth=1720,natheight=372]{images/wollok-tests-checkeos.eps}
-		\end{figure}
-	\end{center}
-}
-
-% \frame{
-% 	\frametitle{Testing \& TDD}
-% 	\framesubtitle{Type System}
-% 	Testeo del Type System
-% 	\begin{center}
-% 		\begin{figure}
-% 			\includegraphics[width=1\textwidth,height=0.6\textheight,natwidth=836,natheight=444]{images/wollok-tests-typesystem.eps}
-% 		\end{figure}
-% 	\end{center}
-% }
 
 %
 % FEATURE AVANZADOS
@@ -491,15 +420,126 @@ Universidad Nacional de Quilmes\\
 	\end{center}
 }
 
+\section{Desarrollo de Wollok}
+\frame{
+	\frametitle{Desarrollo de Wollok}	
+	\begin{itemize}
+		\item OpenSource: LGPLv3 
+		\item Stack: \includegraphics[width=9pt,
+			 	height=9pt,natwidth=32,natheight=32]{images/eclipse-icon.png} Eclipse XText +
+			 	Xtend Lang
+		\item SCM:
+			\begin{itemize}
+			  	\item \textbf{Código}: \includegraphics[width=9pt,
+			 	height=9pt,natwidth=16pt,natheight=16pt]{images/github-icon.png} GitHub
+			  	(\href{https://github.com/uqbar-project/wollok}{uqbar-project/wollok})
+			 	\item \textbf{Build}: Maven + Tycho
+			 	\item \textbf{Continuous Integration}:
+			 	\includegraphics[width=9pt,
+			 	height=9pt,natwidth=50pt,natheight=50pt]{images/travis-ci-icon.png} Travis
+			 	\item \textbf{Continuous Deployment}
+			 	\item \textbf{Coverage}: coveralls + jacoco
+			 \end{itemize}
+		\item Testing \& TDD
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Desarrollo de Wollok}
+	\framesubtitle{Continuous Integration \& Deployment}	
+	\begin{itemize}
+	  	\item \textbf{GitFlow}
+	  		\begin{itemize}
+	  		  \item Feature Branches
+	  		  \item Pull-Requests
+	  		  \item $dev \rightarrow master \leftarrow  hotfixes$ 
+			\end{itemize}	 
+		\item \textbf{Integration}:
+			\begin{itemize}
+			  \item Travis
+			  \item compile, test, coverage, deploy
+			\end{itemize}
+		\item Deployment:
+				\begin{itemize}
+				  \item \textbf{Productos} (IDE): multiples pataformas
+				  \item \textbf{Update Sites}
+				  \item \textbf{WDK}
+				  \item 2 Ambientes: Stable \& Dev
+				\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Desarrollo de Wollok}
+	\framesubtitle{Testing \& TDD}	
+	\begin{itemize}
+	  	\item 87\% Cobertura 	
+	  	\item \textbf{Runtime}      % SCREEN: ACA MOSTRAMOS UN SCREENSHOT DE UN TEST
+	  		\begin{itemize}
+	  		  \item Testean ejecución
+	  		  \item Interprete
+	  		  \item \textbf{JUnit + iDSL}
+			\end{itemize}	 
+		\item \textbf{Estáticos}
+			\begin{itemize}
+			  \item \textbf{Chequeos}: XPect  % SCREEN: ACA MOSTRAMOS UN TEXT XPECT
+			  \item \textbf{Type System}: JUnit + iDSL
+			  \item \textbf{Autocomplete}: XPect
+			  \item \textbf{Formateo}: JUnit + iDSL
+			\end{itemize}
+		\item \textbf{Pendientes}
+			\begin{itemize}
+			  \item Quick-Fixes
+			  \item Refactors
+			\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Testing \& TDD}
+	\framesubtitle{Runtime}
+	Testeo del Intérprete
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=1\textwidth,natwidth=836,natheight=444]{images/wollok-tests-runtime.eps}
+		\end{figure}
+	\end{center}
+}
+
+\frame{
+	\frametitle{Testing \& TDD}
+	\framesubtitle{Chequeos Estáticos}
+	Testeo de Chequeos Estáticos
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=1\textwidth,natwidth=1720,natheight=372]{images/wollok-tests-checkeos.eps}
+		\end{figure}
+	\end{center}
+}
+
+% \frame{
+% 	\frametitle{Testing \& TDD}
+% 	\framesubtitle{Type System}
+% 	Testeo del Type System
+% 	\begin{center}
+% 		\begin{figure}
+% 			\includegraphics[width=1\textwidth,height=0.6\textheight,natwidth=836,natheight=444]{images/wollok-tests-typesystem.eps}
+% 		\end{figure}
+% 	\end{center}
+% }
+
+
+
 \section{Próximos Pasos}
 \frame{
 	\frametitle{Próximos pasos}
 	Próximos Pasos
 	\begin{itemize}
-		\item Varias discusiones sobre la mejor sintaxis
-		\item Herencia basada en mixins
-		\item Implementar wollok-game en el aula
-		\item Plataforma p/interacción Alumno $ \leftrightarrow $ Docente 
+		\item Nuevos tests
+		\item Separación de void y nothing
+		\item Nuevos constructores
+		\item ... y muchas otras discusiones sobre la mejor sintaxis
+		\item \textit{Contract-based} programming
 	\end{itemize}
 	
 	Y muchas actividades para sumar más gente al proyecto.
