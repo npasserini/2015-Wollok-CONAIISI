@@ -292,34 +292,22 @@ Universidad Nacional de Quilmes\\
 % FEATURE AVANZADOS
 %
 
-\section{Features Avanzados}
+\section{Características}
 \frame{
-	\frametitle{Features Avanzados}	
+	\frametitle{Características}	
 	\begin{itemize}
-    \item Debugger
-    \item Diagramas: Clases y Objetos {\footnotesize (en desarrollo)}
-    \item Tests
-    \item ContentAssist y QuickFixes
-    \item Sublime Plugins 
-    \item I18N
+    \item Reporte de errores adaptado e internacionalizado.
+    \item Testeo automático integrado.
+    \item ContentAssist, quick fixes, refactorings, formateo automático.
+    \item Diagramas estáticos (y dinámicos en proceso).
+    \item Versionado y trabajo en grupo (básico).
+    \item Debugger (en proceso).
+    \item Soporte para editores livianos (Sublime) y web (Mumuki, otros en proceso).
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{Features Avanzados}
-	\framesubtitle{Debugger}
-	Debugger
-	\begin{itemize}
-	    \item UI integrada a Eclipse Debug
-	    \item Breakpoints: agregar, remover, deshabilitar, etc
-	    \item Step, into, out 
-	    \item Inspeccionar variables
-	    \item Diagrama de Objetos
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Features Avanzados}
+	\frametitle{Características}
 	\framesubtitle{Tests}
 	Tests
 	\begin{center}
@@ -328,24 +316,6 @@ Universidad Nacional de Quilmes\\
 		\end{figure}
 	\end{center}
 }
-
-\frame{
-	\frametitle{Features Avanzados}
-	\framesubtitle{Soporte para Sublime}
-	Soporte para Sublime
-	\begin{itemize}
-	    \item WDK
-	    	\begin{itemize}
-	    		\item No IDE
-	    		\item $\sim70$MB (vs $\sim140$)
-	    		\item Headless: wchecker, winterpreter, wtest
-	    	\end{itemize}
-	    \item Syntax highlight
-	    \item Templates 
-	    \item Linter
-	\end{itemize}
-}
-
 
 \frame{
 	\frametitle{Sublime Support}
@@ -367,6 +337,35 @@ Universidad Nacional de Quilmes\\
 	\end{center}
 }
 
+\frame{
+	\frametitle{Características}
+	\framesubtitle{Debugger}
+	Debugger
+	\begin{itemize}
+	    \item UI integrada a Eclipse Debug
+	    \item Breakpoints: agregar, remover, deshabilitar, etc
+	    \item Step, into, out 
+	    \item Inspeccionar variables
+	    \item Diagrama de Objetos
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Características}
+	\framesubtitle{Soporte para Sublime}
+	Soporte para Sublime
+	\begin{itemize}
+	    \item WDK
+	    	\begin{itemize}
+	    		\item No IDE
+	    		\item $\sim70$MB (vs $\sim140$)
+	    		\item Headless: wchecker, winterpreter, wtest
+	    	\end{itemize}
+	    \item Syntax highlight
+	    \item Templates 
+	    \item Linter
+	\end{itemize}
+}
 
 %
 % WOLLOK GAME
@@ -448,140 +447,40 @@ Universidad Nacional de Quilmes\\
 	\end{center}
 }
 
-\section{Desarrollo de Wollok}
-\frame{
-	\frametitle{Desarrollo de Wollok}	
-	\begin{itemize}
-		\item OpenSource: LGPLv3 
-		\item Stack: \includegraphics[width=9pt,
-			 	height=9pt,natwidth=32,natheight=32]{images/eclipse-icon.png} Eclipse XText +
-			 	Xtend Lang
-		\item SCM:
-			\begin{itemize}
-			  	\item \textbf{Código}: \includegraphics[width=9pt,
-			 	height=9pt,natwidth=16pt,natheight=16pt]{images/github-icon.png} GitHub
-			  	(\href{https://github.com/uqbar-project/wollok}{uqbar-project/wollok})
-			 	\item \textbf{Build}: Maven + Tycho
-			 	\item \textbf{Continuous Integration}:
-			 	\includegraphics[width=9pt,
-			 	height=9pt,natwidth=50pt,natheight=50pt]{images/travis-ci-icon.png} Travis
-			 	\item \textbf{Continuous Deployment}
-			 	\item \textbf{Coverage}: coveralls + jacoco
-			 \end{itemize}
-		\item Testing \& TDD
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Desarrollo de Wollok}
-	\framesubtitle{Continuous Integration \& Deployment}	
-	\begin{itemize}
-	  	\item \textbf{GitFlow}
-	  		\begin{itemize}
-	  		  \item Feature Branches
-	  		  \item Pull-Requests
-	  		  \item $dev \rightarrow master \leftarrow  hotfixes$ 
-			\end{itemize}	 
-		\item \textbf{Integration}:
-			\begin{itemize}
-			  \item Travis
-			  \item compile, test, coverage, deploy
-			\end{itemize}
-		\item Deployment:
-				\begin{itemize}
-				  \item \textbf{Productos} (IDE): multiples pataformas
-				  \item \textbf{Update Sites}
-				  \item \textbf{WDK}
-				  \item 2 Ambientes: Stable \& Dev
-				\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Desarrollo de Wollok}
-	\framesubtitle{Testing \& TDD}	
-	\begin{itemize}
-	  	\item 87\% Cobertura 	
-	  	\item \textbf{Runtime}      % SCREEN: ACA MOSTRAMOS UN SCREENSHOT DE UN TEST
-	  		\begin{itemize}
-	  		  \item Testean ejecución
-	  		  \item Interprete
-	  		  \item \textbf{JUnit + iDSL}
-			\end{itemize}	 
-		\item \textbf{Estáticos}
-			\begin{itemize}
-			  \item \textbf{Chequeos}: XPect  % SCREEN: ACA MOSTRAMOS UN TEXT XPECT
-			  \item \textbf{Type System}: JUnit + iDSL
-			  \item \textbf{Autocomplete}: XPect
-			  \item \textbf{Formateo}: JUnit + iDSL
-			\end{itemize}
-		\item \textbf{Pendientes}
-			\begin{itemize}
-			  \item Quick-Fixes
-			  \item Refactors
-			\end{itemize}
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Testing \& TDD}
-	\framesubtitle{Runtime}
-	Testeo del Intérprete
-	\begin{center}
-		\begin{figure}
-			\includegraphics[width=1\textwidth,natwidth=836,natheight=444]{images/wollok-tests-runtime.eps}
-		\end{figure}
-	\end{center}
-}
-
-\frame{
-	\frametitle{Testing \& TDD}
-	\framesubtitle{Chequeos Estáticos}
-	Testeo de Chequeos Estáticos
-	\begin{center}
-		\begin{figure}
-			\includegraphics[width=1\textwidth,natwidth=1720,natheight=372]{images/wollok-tests-checkeos.eps}
-		\end{figure}
-	\end{center}
-}
-
-% \frame{
-% 	\frametitle{Testing \& TDD}
-% 	\framesubtitle{Type System}
-% 	Testeo del Type System
-% 	\begin{center}
-% 		\begin{figure}
-% 			\includegraphics[width=1\textwidth,height=0.6\textheight,natwidth=836,natheight=444]{images/wollok-tests-typesystem.eps}
-% 		\end{figure}
-% 	\end{center}
-% }
-
-
-
-\section{Próximos Pasos}
-\frame{
-	\frametitle{Próximos pasos}
-	Próximos Pasos
-	\begin{itemize}
-		\item Nuevos tests
-		\item Separación de void y nothing
-		\item Nuevos constructores
-		\item ... y muchas otras discusiones sobre la mejor sintaxis
-		\item \textit{Contract-based} programming
-	\end{itemize}
-	
-	Y muchas actividades para sumar más gente al proyecto.
-}
+%\section{Próximos Pasos}
+%\frame{
+%	\frametitle{Próximos pasos}
+%	Próximos Pasos
+%	\begin{itemize}
+%		\item Separación de void y nothing
+%		\item Nuevos constructores
+%		\item ... y muchas otras discusiones sobre la mejor sintaxis
+%		\item \textit{Contract-based} programming
+%	\end{itemize}
+%	
+%	Y muchas actividades para sumar más gente al proyecto.
+%}
 
 \frame{
   \frametitle{Muchas gracias}
-  {\LARGE ¡Muchas Gracias!}
+
+  \hspace{6cm}
+  \includegraphics[width=0.4\textwidth]{images/logo-fun.png}
+
+  {\LARGE \vspace{-1.2cm} ¡Muchas Gracias!}
+
   \bigskip
-  \begin{center}
-		\begin{figure}
-			\includegraphics[width=0.6\textwidth,natwidth=815,natheight=342]{images/logo-fun.png}
-		\end{figure}
-	\end{center}
+  \medskip
+  \begin{itemize}
+  	\item Para saber más 
+  	\\\url{www.wollok.org/}
+  	\medskip
+  	\item Para colaborar con el desarrollo 
+  	\\\url{github.com/uqbar-project/wollok}
+  	\medskip
+  	\item Para participar en las discusiones
+  	\\\url{groups.google.com/forum/\#!forum/wollok-docentes}
+  \end{itemize}
 }
 \end{document}
 
