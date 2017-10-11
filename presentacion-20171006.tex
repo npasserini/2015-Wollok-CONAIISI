@@ -1,4 +1,4 @@
-\documentclass{beamer}
+ \documentclass{beamer}
 
 \usepackage{graphicx}
 
@@ -258,9 +258,10 @@ Universidad Nacional de Quilmes\\
 	\end{itemize}
 }
 
+\section{Wollok Language + IDE}
 \frame{
-	\frametitle{Introducción}
-	\framesubtitle{¿Qué es Wollok?}
+	\frametitle{¿Qué es Wollok?}
+	\framesubtitle{Introducción}
 	\begin{itemize}
 	 \item Lenguaje + muchas herramientas
 	 \item Soporte para nuestro enfoque pedagógico
@@ -275,31 +276,45 @@ Universidad Nacional de Quilmes\\
 }
 
 \frame{
-	\frametitle{Introducción}
-	\framesubtitle{¿Qué es Wollok? - Un entorno optimizado para la enseñanza}
+	\frametitle{¿Qué es Wollok?}
+	\framesubtitle{Un entorno optimizado para la enseñanza}
 	\begin{itemize}
-		\item Sintaxis cuidada 
+		\item \textbf{Sintaxis} diseñada para la enseñanza 
 			\begin{itemize}
 			  \item selección de keywords (ej: \code{const}, \code{method})
 			  \item \code{return} obligatorio
 			  \item énfasis en objetos y mensajes \footnote {¡Aunque no todo es objeto-mensaje!}
 			\end{itemize}
+		\item \textbf{Reducir características poco adecuadas} a un principiante
+			\begin{itemize}
+				\item Constructores simplificados (proximamente)
+				\item No tiene \textit{reflection}
+				\item No usamos entrada / salida
+			\end{itemize}
 		\item Combina \textit{object-based} con \textit{class-based programming}
-		\item APIs minimalistas (ej: colecciones)
 		\item \textit{Import system}
+		\item Testing integrado
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{Introducción}
+	\frametitle{¿Qué es Wollok?}
 	\framesubtitle{Cuidado: No perderle pisada la evolución de las herramientas industriales}
 	\begin{itemize}
-		\item Ambiente de objetos basado en archivos
-		\item Framework de testing integrado
-		\item Sintaxis concisa y "moderna"\\
+		\item Ambiente de objetos \textbf{basado en archivos}
+	    \smallskip
+		\item \textbf{Sintaxis} concisa y "moderna"\\
 		{\footnotesize Ej: lambdas, literales para colecciones, excepciones, constructores}
-		\item Sistema de tipos \emph{pluggeable} (en proceso)
+	    \smallskip
+		\item \textbf{Sistema de tipos} \emph{pluggeable} (en proceso)
+	    \smallskip
 		\item Mixins
+	    \smallskip
+	    \item \textbf{Testeo} automático integrado.
+	    \smallskip
+	    \item \textbf{Versionado y trabajo en grupo} (básico, git).
+	    \smallskip
+	    \item \textbf{Debugger} (en proceso).
 	\end{itemize}
 }
 
@@ -307,94 +322,112 @@ Universidad Nacional de Quilmes\\
 % FEATURE AVANZADOS
 %
 
-\section{Características}
 \frame{
-	\frametitle{Características}	
+	\frametitle{Wollok IDE \textit{Core Features} -- \textit{Error reporting}}
+	\vspace{-0.5cm}
+	\begin{center}
+    	\includegraphics[scale=0.45]{images/errorReporting.png}
+	\end{center}
+	\vspace{-0.25cm}
 	\begin{itemize}
-    \item \textbf{Reporte de errores} adaptado e internacionalizado.
-    \smallskip
-    \item \textbf{Content assist, quick fixes, refactorings, formateo automático}.
-    \smallskip
-    \item \textbf{Testeo} automático integrado.
-    \smallskip
-    \item \textbf{Diagramas} estáticos (y dinámicos en proceso).
-    \smallskip
-    \item \textbf{Versionado y trabajo en grupo} (básico, git).
-    \smallskip
-    \item \textbf{Debugger} (en proceso).
-    \smallskip
-    \item Soporte para editores livianos (Sublime) y web (Mumuki, otros en proceso).
+		\item Resalta los errores en el código y a medida que se escribe.
+		\item Errores comprensibles para el estudiante.
+		\item Internacionalizado.
+		\item \textbf{Favorece la autonomía en el aprendizaje.}
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{Características}
-	\framesubtitle{Tests}
-	Tests
+	\frametitle{Wollok IDE \textit{Core Features} -- \textit{Content assist}}
+	\vspace{-0.5cm}
+	\begin{center}
+    	\includegraphics[scale=0.45]{images/codeCompletion.png}
+	\end{center}
+	\vspace{-0.25cm}
+	\begin{itemize}
+		\item Guía al estudiante, mostrando opciones para continuar.
+		\item Reduce la necesidad de memorizar sintaxis y \textit{APIs}.
+		\item Evita errores de tipeo.
+		\item \textbf{Permite concentrarse en cuestiones de más alto nivel.}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Wollok IDE \textit{Core Features} -- Herramientas de visualización}
+	\vspace{-0.5cm}
+	\begin{center}
+    	\includegraphics[scale=0.40]{images/outline.png}
+	\end{center}
+	\vspace{-0.5cm}
+	\begin{itemize}
+	    \item Diagramas estáticos automáticos y \textit{customizables}.
+	    \item \textit{Outline}.
+	    \item (Próximamente) diagramas dinámicos.
+	    \item \textbf{Proveen una vista de más alto nivel del programa.}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Wollok IDE \textit{Core Features} -- \textit{Quick Fixes}}
+	\vspace{-0.5cm}
+	\begin{center}
+    	\includegraphics[scale=0.50]{images/wollok-paper-check-unusedVariable.png}
+	\end{center}
+	\vspace{-0.25cm}
+	\begin{itemize}
+	    \item Soluciones automatizadas para errores comunes.
+	    \item Aceleran la resolución de problemas simples y/o secundarios.
+	    \item Favorecen el \textit{Test Driven Development}.
+	    \item Evita perder el foco de la tarea en curso.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Wollok IDE \textit{Core Features} -- Tests integrados}
 	\begin{center}
 		\begin{figure}
 			\includegraphics[width=1\textwidth,natwidth=1734,natheight=498]{images/tests.png}
 		\end{figure}
 	\end{center}
+	\begin{itemize}
+	    \item Se incorpora el testing como una parte esencial de la práctica de la programación.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Wollok IDE \textit{Core Features}}
+	\begin{itemize}
+	    \item \textbf{Refactorings}
+	    \\ Simplifican modificaciones sencillas al código, favoreciendo las metodologías de trabajo iterativas.
+	    \smallskip
+	    \item \textbf{Formateo automático}
+	    \\ Ayuda al estudiante a incorporar buenas prácticas de organización espacial de código.
+	    \smallskip
+	    \item Soporte para editores livianos (Sublime) y web (Mumuki, otros en proceso)
+	\end{itemize}
 }
 
 %
 % WOLLOK GAME
 %
 
-\section{Wollok Game}
 \frame{
 	\frametitle{Wollok Game}
 	\begin{itemize}
-		\item Herramienta complementaria al testeo unitario y consola interactiva.
-		\item Mejorar la comprensión de conceptos.
-		\item Visualización de comportamiento
-		\item Motivación en el aprendizaje fomentando la participación.
+		\item Permite construir pantallas interactivas muy sencillas
+	    \smallskip
+		\item Complementa al testeo unitario y consola interactiva
+	    \smallskip
+		\item Se evita la utilización de E/S
+	    \smallskip
+		\item Motivación en el aprendizaje fomentando la participación
 	\end{itemize}
-}
 
-\frame{
-	\frametitle{Wollok Game}
-	\framesubtitle{FarmVille}
-	\textbf{FarmVille} - Demo
-	
 	\begin{center}
-		\begin{figure}
-			\includegraphics[width=0.4\textwidth,height=0.6\textheight,natwidth=500,natheight=529]{images/wollok-game-farmville.png}
-		\end{figure}
+		\includegraphics[width=0.25\textwidth]{images/wollok-game-farmville.png}
+		\hspace{2cm}
+		\includegraphics[width=0.25\textwidth]{images/wollok-game-sokoban.png}	
 	\end{center}
-}
-
-\frame{
-	\frametitle{Wollok Game}
-	\framesubtitle{Sokoban}
-	\textbf{Sokoban} - Demo
-	
-	\begin{center}
-		\begin{figure}
-			\includegraphics[width=0.4\textwidth,height=0.6\textheight,natwidth=258,natheight=289]{images/wollok-game-sokoban.png}
-		\end{figure}
-	\end{center}
-}
-
-\frame{
-	\frametitle{Wollok Game}
-	\framesubtitle{Futuro}
-	Futuro
-	\begin{itemize}
-		\item + Tipos de \textbf{Juegos}
-		\begin{itemize}
-		  \item Survival
-		  \item Por turnos
-		\end{itemize}
-		\item + Tipos de \textbf{Interacciones}
-		\item Features Gráficos
-		\begin{itemize}
-		  \item Animaciones
-		  \item Fondos infinitos
-		  \item Distintos vistas (lateral, isométrica, etc)
-		\end{itemize}
-	\end{itemize}
 }
 
 \section{Experiencia en el Aula}
@@ -417,6 +450,7 @@ Universidad Nacional de Quilmes\\
 		fomentando su \textbf{autonomía, creatividad y motivación}\\
 	\end{center}
 }
+
 
 %\section{Próximos Pasos}
 %\frame{
