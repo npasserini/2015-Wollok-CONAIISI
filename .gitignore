@@ -6,7 +6,7 @@
 *.backup
 *~
 /tmp
-/main.synctex.gz
+*.synctex.gz
 .project
 .texlipse
 *.nav
